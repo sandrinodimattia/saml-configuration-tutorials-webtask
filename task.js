@@ -37,15 +37,15 @@ module.exports = (ctx, req, res) => {
         <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <input id="filter" type="text" class="form-control" placeholder="Filter in {{total}} tutorials from Auth0, Azure AD, Okta, OneLogin...">
+            <div class="jumbotron" style="padding-top: 5px; padding-bottom: 5px;">
+              <h1>SAML Configuration Tutorials</h1>
+              <p style="font-size: 20px;">This is a list of tutorials that show the SAML configuration of third party applications. Because these tutorials simply show how to configure the applications using SAML standard you can easily reuse them when integrating these apps with your own internal IdP or "SSO vendor".</p>
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <div class="jumbotron" style="padding-top: 5px; padding-bottom: 5px;">
-              <h1>SAML Configuration Tutorials</h1>
-              <p>This is a list of tutorials that show the SAML configuration of third party applications. Because these tutorials simply show how to configure the applications using SAML standard you can easily reuse them when integrating these apps with your own internal IdP or "SSO vendor".</p>
-            </div>
+            <input id="filter" type="text" class="form-control" placeholder="Filter in {{total}} tutorials from Auth0, Azure AD, Okta, OneLogin...">
           </div>
         </div>
         <div class="row">
