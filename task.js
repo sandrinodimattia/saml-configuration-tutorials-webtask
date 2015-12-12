@@ -96,9 +96,6 @@ module.exports = (ctx, req, res) => {
               $('#saml-modal').modal('show');
             });
           }
-          return;
-
-          $('#contents').attr('src', url);
         });
 
         $('#filter').keyup(function () {
