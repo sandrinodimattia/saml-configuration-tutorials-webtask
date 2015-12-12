@@ -8,7 +8,8 @@ const cheerio = require('cheerio');
 
 module.exports = (ctx, req, res) => {
   if (ctx.data && ctx.data.okta) {
-    console.log('https://raw.githubusercontent.com' + ctx.data.okta.replace('/blob', ''));
+    // The Okta tutorials are just raw HTML files in GitHub, no point in redirecting to it since it's unreadable.
+    // Instead, we'll use this webtask as a proxy to serve the HTML within the page (in a modal dialog).
     return request.get('https://raw.githubusercontent.com' + ctx.data.okta.replace('/blob', ''), function(err, r, html) {
       res.writeHead(200, { 'Content-Type': 'text/html' });
       res.end(html
