@@ -1,6 +1,3 @@
-# saml-configuration-tutorials-webtask
-A small webscraper webtask that lists SAML configuration tutorials from different vendors.
-
 # SAML Configuration Tutorials Webtask
 
 A webtask that lists SAML Configuration Tutorials for third party applications from different vendors. Demo: https://webtask.it.auth0.com/api/run/wt-sandrino-auth0_com-0/saml-config
