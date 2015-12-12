@@ -41,6 +41,14 @@ module.exports = (ctx, req, res) => {
           </div>
         </div>
         <div class="row">
+          <div class="col-sm-12">
+            <div class="jumbotron" style="padding-top: 5px; padding-bottom: 5px;">
+              <h1>SAML Configuration Tutorials</h1>
+              <p>This is a list of tutorials that show the SAML configuration of third party applications. Because these tutorials simply show how to configure the applications using SAML standard you can easily reuse them when integrating these apps with your own internal IdP or "SSO vendor".</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
           {{#if err}}
           <p>{{message}}</p>
           {{else}}
@@ -50,7 +58,7 @@ module.exports = (ctx, req, res) => {
               <tr>
                 <th>Source</th>
                 <th>Application</th>
-                <th>Actions</th>
+                <th style="width: 15px"></th>
               </tr>
               </thread>
               <tbody>
