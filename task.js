@@ -127,10 +127,57 @@ module.exports = (ctx, req, res) => {
   });
 };
 
-//
 const getLinks = (done) => {
   const links = [];
   async.waterfall([
+    (callback) => {
+      links.push({
+        text: 'Workfront', type: 'Manual',
+        url: 'https://attask-prod.mindtouch.us/Setting_Up_Workfront/Integrations/Single_Sign-On_in_Workfront/Configuring_Single_Sign-On_with_SAML/Configuring_Workfront_with_SAML_2.0'
+      });
+      links.push({
+        text: 'Formstack', type: 'Manual',
+        url: 'https://support.formstack.com/customer/portal/articles/1878654-saml-2-0-authentication-settings'
+      });
+      links.push({
+        text: 'Github Enterprise', type: 'Manual',
+        url: 'https://help.github.com/enterprise/2.4/admin/guides/user-management/authenticating-users-for-your-github-enterprise-instance/'
+      });
+      links.push({
+        text: 'Salesforce - Desk.com', type: 'Manual',
+        url: 'https://support.desk.com/customer/portal/articles/1954751-agent-single-sign-on-sso-via-jwt-and-saml-2-0-an-overview'
+      });
+      links.push({
+        text: 'Confluence', type: 'Manual',
+        url: 'https://marketplace.atlassian.com/plugins/com.bitium.confluence.SAML2Plugin'
+      });
+      links.push({
+        text: 'Litmos', type: 'Auth0',
+        url: 'https://ask.auth0.com/t/sso-with-litmos/541'
+      });
+      links.push({
+        text: 'Jira', type: 'Manual',
+        url: 'https://github.com/lastpass/jira-saml'
+      });
+      links.push({
+        text: 'Smartsheet', type: 'Manual',
+        url: 'http://www.smartsheet.com/files/haymaker/SAMLSelfServiceInstructions.pdf'
+      });
+      links.push({
+        text: 'Jenkins', type: 'Manual',
+        url: 'https://wiki.jenkins-ci.org/display/JENKINS/SAML+Plugin'
+      });
+      links.push({
+        text: 'Intacct', type: 'Manual',
+        url: 'https://developer.intacct.com/wiki/setting-single-sign-sso'
+      });
+      links.push({
+        text: 'Pivotal', type: 'Manual',
+        url: 'https://docs.pivotal.io/pivotalcf/opsguide/sso.html'
+      });
+      callback();
+    },
+
     (callback) => {
       request(`https://auth0.com/docs/saml-apps`, (err, res, html) => {
         if (err) {
