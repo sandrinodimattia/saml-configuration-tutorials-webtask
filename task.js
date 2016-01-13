@@ -233,7 +233,7 @@ const getLinks = (done) => {
                 .replace('-', ' ')
                 .replace('.html', ''),
               type: 'Okta',
-              url: 'https://github.com' + link.attr('href')
+              url: 'https://github.com' + link.attr('href') + '#L83';
             });
           }
         });
