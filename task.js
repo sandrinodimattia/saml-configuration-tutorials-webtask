@@ -75,37 +75,11 @@ module.exports = (ctx, req, res) => {
           {{/if}}
         </div>
         </div>
-        <div class="modal fade" id="saml-modal" tabindex="-1" role="dialog">
-          <div class="modal-dialog modal-lg modal-wide" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Thid Party Application</h4>
-              </div>
-              <div class="modal-body"></div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </body>
       <script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
       <script>
       $(function() {
-        $('a.link').click(function(e) {
-          var link = $(this);
-          var url = link.attr('href');
-          if (url.indexOf('?okta=') === 0) {
-            e.preventDefault();
-
-            $(".modal-body").load(url + '&_=' + (new Date().getTime()), function() {
-              $('#saml-modal').modal('show');
-            });
-          }
-        });
-
         $('#filter').keyup(function () {
           var filter = $('#filter').val();
           $('tbody tr').hide();
