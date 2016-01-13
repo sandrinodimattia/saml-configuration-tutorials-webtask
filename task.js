@@ -8,13 +8,8 @@ const cheerio = require('cheerio');
 
 module.exports = (ctx, req, res) => {
   if (ctx.data && ctx.data.okta) {
-    // The Okta tutorials are just raw HTML files in GitHub, no point in redirecting to it since it's unreadable.
-    // Instead, we'll use this webtask as a proxy to serve the HTML within the page (in a modal dialog).
-    return request.get('https://raw.githubusercontent.com' + ctx.data.okta.replace('/blob', ''), function(err, r, html) {
-      res.writeHead(200, { 'Content-Type': 'text/html' });
-      res.end(html
-        .replace(/\"resources/g, '"https://raw.githubusercontent.com/okta/UserDocs/master/SAML_Docs/resources')
-        .replace(/\"images/g, '"https://raw.githubusercontent.com/okta/UserDocs/master/SAML_Docs/images'));
+    return res.writeHead(301, {
+      Location: 'https://raw.githubusercontent.com' + ctx.data.okta.replace('/blob', '')
     });
   }
 
@@ -244,7 +239,7 @@ const getLinks = (done) => {
                 .replace('-', ' ')
                 .replace('.html', ''),
               type: 'Okta',
-              url: '?okta=' + link.attr('href')
+              url: 'https://github.com' + link.attr('href')
             });
           }
         });
