@@ -7,12 +7,6 @@ const request = require('request');
 const cheerio = require('cheerio');
 
 module.exports = (ctx, req, res) => {
-  if (ctx.data && ctx.data.okta) {
-    return res.writeHead(301, {
-      Location: 'https://raw.githubusercontent.com' + ctx.data.okta.replace('/blob', '')
-    });
-  }
-
   const View = `
     <html>
       <head>
